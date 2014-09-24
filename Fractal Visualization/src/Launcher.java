@@ -93,8 +93,12 @@ class Launcher extends JFrame {
 		/*
 		 * Title label
 		 */
-		JLabel intro = new JLabel("Interactive Fractal Visualization Software");
+		JPanel introPanel = new JPanel();
+		introPanel.setBackground(Color.WHITE);
+		JLabel intro = new JLabel("<html>Interactive Fractal Visualization Software" +
+				"<br>v1.1<html>");
 		intro.setFont(new Font("Default",Font.PLAIN,24));
+		introPanel.add(intro);
 
 		/*
 		 * Instructions and licensing text
@@ -221,7 +225,7 @@ class Launcher extends JFrame {
 		 */
 		boxes[0].add(Box.createVerticalStrut(25));
 
-		boxes[0].add(intro,BorderLayout.CENTER);
+		boxes[0].add(introPanel,BorderLayout.CENTER);
 		boxes[0].add(selectorPane,BorderLayout.CENTER);
 		boxes[0].add(textPane,BorderLayout.CENTER);
 		boxes[0].add(buttonPane,BorderLayout.CENTER);
