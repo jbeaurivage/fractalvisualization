@@ -1,0 +1,5 @@
+package org.fvs.fractalapi;
+
+public interface Fractal<P extends FractalControl> {
+	public void renderFractal(P parameters);
+}
