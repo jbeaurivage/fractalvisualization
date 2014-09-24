@@ -34,7 +34,7 @@ public class FractalTree extends TreeFamily {
 	/*
 	 * Tree variables initialization
 	 */
-	void fractalSetup(){
+	public void fractalSetup(){
 		init_len = 250;
 		frac = (float) 1.7;
 		stroke = 1;

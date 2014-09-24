@@ -34,11 +34,11 @@ public abstract class FractalControl extends PApplet {
 	/*
 	 * General fractal variables
 	 */
-	float scaleFactor;   
-	float translateX;    
-	float translateY;   
-	static final float speed = 20;    //arrow key scroll speed, fixed
-	int iterations;      
+	protected float scaleFactor;   
+	protected float translateX;    
+	protected float translateY;   
+	protected static final float speed = 20;    //arrow key scroll speed, fixed
+	protected int iterations;      
 
 	/**
 	 * Processing setup, executed at runtime by PApplet, and calls specific fractalSetup() method
