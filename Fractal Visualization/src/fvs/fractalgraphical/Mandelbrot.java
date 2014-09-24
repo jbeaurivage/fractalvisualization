@@ -37,7 +37,7 @@ public class Mandelbrot extends FractalControl {
 	 * Called by the default Processing setup method at applet
 	 *  initialization and initializes fractal rendering
 	 */
-	public void fractalSetup(){
+	protected void fractalSetup(){
 
 		pg = createGraphics(800,800);
 		renderFractal();
@@ -130,7 +130,8 @@ public class Mandelbrot extends FractalControl {
 	/**
 	 * Renders the zooming rectangle on the canvas.
 	 */
-	public void visor() {
+	@Override
+	protected void visor() {
 		int rectW = rect_x2-rect_x1;
 		int rectH = rect_y2-rect_y1;
 
@@ -146,7 +147,7 @@ public class Mandelbrot extends FractalControl {
 	 * Resets the canvas to its original state
 	 */
 	@Override
-	public void reset() {
+	protected void reset() {
 
 		fx = 0;
 		fy = 0;
@@ -235,41 +236,38 @@ public class Mandelbrot extends FractalControl {
 	/*
 	 * Mandelbrot fractal variables
 	 */
-	float fx = 0;
-	float fy = 0;
-	int count = 0;
+	private float fx = 0;
+	private float fy = 0;
+	private int count = 0;
 
 	/*
 	 * Plane boundaries
 	 */
-	float minX = (float) -2.5;
-	float maxX = (float) 1.5;
-	float minY = -2;
-	float maxY = 2;
+	private float minX = (float) -2.5;
+	private float maxX = (float) 1.5;
+	private float minY = -2;
+	private float maxY = 2;
 
 	/*
 	 * Scale/zooming factor
 	 */
-	float scaleFactor = 200;
+	private float scaleFactor = 200;
 
 	/*
 	 * Fractal iterations (fixed, best performance/functionality ratio)
 	 */
-	int iterations = 40;
+	private int iterations = 40;
 
 	/*
 	 * Plane size
 	 */
-	int w = (int)((maxX - minX) * scaleFactor);
-	int h = (int)((maxY - minY) * scaleFactor);
+	private int w = (int)((maxX - minX) * scaleFactor);
+	private int h = (int)((maxY - minY) * scaleFactor);
 
 	/*
 	 * Zooming rectangle boundaries
 	 */
-	int rect_x1;
-	int rect_y1;
-	int rect_x2;
-	int rect_y2;
+	private int rect_x1, rect_y1, rect_x2, rect_y2;
 
 	/*
 	 * Fractal image frame

@@ -165,7 +165,6 @@ class Launcher extends JFrame {
 		 */
 		startButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				System.out.println("start fractal engine");
 
 				/*
 				 *  initialize fractal engine
@@ -184,7 +183,7 @@ class Launcher extends JFrame {
 					fractal.init();
 					engine.setVisible(true);
 				}
-				if(fractalSelection == "Koch Tree"){
+				else if(fractalSelection == "Koch Tree"){
 					fractal = new KochTree();
 					engine.add(fractal);
 					engine.setSize(800,800);
@@ -192,7 +191,7 @@ class Launcher extends JFrame {
 					fractal.init();
 					engine.setVisible(true);
 				}
-				if(fractalSelection == "JML"){
+				else if(fractalSelection == "JML"){
 					fractal = new JML();
 					engine.add(fractal);
 					engine.setSize(800,800);
@@ -201,7 +200,7 @@ class Launcher extends JFrame {
 					engine.setVisible(true);
 				}
 
-				if(fractalSelection == "Mandelbrot"){
+				else if(fractalSelection == "Mandelbrot"){
 					fractal = new Mandelbrot();
 					engine.add(fractal);
 					engine.setSize(800,800);

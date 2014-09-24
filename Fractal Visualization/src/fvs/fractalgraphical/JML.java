@@ -33,11 +33,11 @@ public class JML extends FractalControl {
 	 */
 	private static final long serialVersionUID = -2753097136561885832L;
 
-	public void fractalSetup(){
+	protected void fractalSetup(){
 		iterations = 8;
 	}
 
-	public void reset(){
+	protected void reset(){
 		translateX = 0;
 		translateY = 0;
 		scaleFactor = 1;
@@ -158,16 +158,6 @@ public class JML extends FractalControl {
 		}
 		text(scaleFactor+"x zoom",650,750);
 		text("("+translateX+", "+translateY+")",10,20);
-	}
-
-	/**
-	 * Zoom cross
-	 */
-	public void visor(){
-		strokeWeight((float) 1.5);
-		stroke(255);
-		line(width/2-50,height/2,width/2+50,height/2);
-		line(width/2,height/2-50,width/2,height/2+50);
 	}
 	
 	/**

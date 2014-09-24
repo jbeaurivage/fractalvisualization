@@ -51,12 +51,21 @@ public abstract class FractalControl extends PApplet {
 		fractalSetup();
 	}
 
+	/**
+	 * Zooming aid; cross by default
+	 */
+	protected void visor(){
+		strokeWeight((float) 1.5);
+		stroke(255,0,0);
+		line(width/2-50,height/2,width/2+50,height/2);
+		line(width/2,height/2-50,width/2,height/2+50);
+	}
+	
 	/*
 	 * Common fractal methods; must be implemented
 	 */
-	public abstract void visor(); //zooming visor
-	public abstract void fractalSetup(); //specific setup for each fractal
-	public abstract void reset(); //reset screen
+	protected abstract void fractalSetup(); //specific setup for each fractal
+	protected abstract void reset(); //reset screen
 	public abstract void keyPressed(); //keyboard controls
 
 }

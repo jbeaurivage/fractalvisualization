@@ -36,7 +36,7 @@ public class KochTree extends TreeFamily {
 	private static final long serialVersionUID = -95325482120226376L;
 
 
-	public void fractalSetup(){
+	protected void fractalSetup(){
 		
 		/*
 		 * Tree variables initialization
@@ -50,18 +50,7 @@ public class KochTree extends TreeFamily {
 		iterations = -1;
 	}
 
-	/**
-	 * Zoom cross
-	 */
-	public void visor(){
-		noSmooth();
-		strokeWeight((float) 1.5);
-		stroke(255,0,0);
-		line(width/2-50,height/2,width/2+50,height/2);
-		line(width/2,height/2-50,width/2,height/2+50);
-	}
-
-	public void reset(){
+	protected void reset(){
 		translateX = 0;
 		translateY = 400;
 		scaleFactor = 1;
@@ -93,7 +82,7 @@ public class KochTree extends TreeFamily {
 	 * @param len Length of the new branch
 	 * @param theta Absolute angle of new line
 	 */
-	void branch(PVector pos, float len, float theta){
+	private void branch(PVector pos, float len, float theta){
 
 		line(pos.x, pos.y, pos.x+len*cos(theta), pos.y+len*sin(theta));
 

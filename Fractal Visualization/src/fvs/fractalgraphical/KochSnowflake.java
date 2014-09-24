@@ -33,12 +33,6 @@ public class KochSnowflake extends FractalControl {
 	private static final long serialVersionUID = 753124176649571869L;
 
 	@Override
-	public void visor() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void fractalSetup() {
 		// TODO Auto-generated method stub
 

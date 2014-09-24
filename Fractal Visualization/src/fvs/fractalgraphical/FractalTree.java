@@ -51,7 +51,6 @@ public class FractalTree extends TreeFamily {
 	 * Zoom cross
 	 */
 	public void visor(){
-		noSmooth();
 		strokeWeight((float) 1.5);
 		stroke(255,0,0);
 		line(width/2-50,height/2,width/2+50,height/2);
