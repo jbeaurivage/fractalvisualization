@@ -1,0 +1,28 @@
+
+public class KochSnowflake extends FractalControl {
+
+	@Override
+	void visor() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void fractalSetup() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void reset() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyPressed() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
