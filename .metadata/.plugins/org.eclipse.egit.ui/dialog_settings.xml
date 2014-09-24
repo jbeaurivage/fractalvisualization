@@ -2,6 +2,19 @@
 <section name="Workbench">
 	<item value="/Users/justinbeaurivage/Documents/Development/Fractal Visualization Repo/FVS Source Build/.git" key="GitSelectRepositoryPage.lastRepository"/>
 	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<list key="CommitDialog.authorValues">
+		<item value="Justin Beaurivage &lt;just_ski4ever@hotmail.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Justin Beaurivage &lt;just_ski4ever@hotmail.com&gt;"/>
+	</list>
 	<section name="GitCommitMessageComponent">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.merge.MergeResultDialog.dialogBounds">
+		<item value="488" key="DIALOG_WIDTH"/>
+		<item value="311" key="DIALOG_Y_ORIGIN"/>
+		<item value="190" key="DIALOG_HEIGHT"/>
+		<item value="476" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>
