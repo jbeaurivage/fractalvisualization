@@ -35,13 +35,13 @@ import fvs.fractalapi.Instructions;
 
 
 /**
- * This class provides the first interface the user will see when the program is launched. It 
- * contains the {@code public static void }{@link #main(String[])}. It then launches the different
- * fractal classes according to user selection and provides instructions. Uses Swing as a GUI library
+ * This class provides the first interface the user will see when the program is launched. It launches
+ *  the different fractal classes according to user selection and provides instructions. Uses Swing
+ *  as a GUI library
  * @author Justin Beaurivage
  *
  */
-class Launcher extends JFrame {
+public class Launcher extends JFrame {
 
 	/**
 	 * ID for possible class serialization
@@ -53,13 +53,8 @@ class Launcher extends JFrame {
 	 */
 	String fractalSelection = "Fractal Tree";
 
-	/**
-	 * Program entry point, creates a new Launcher frame
-	 */
-	public static void main(String[] args) {
-		new Launcher();
-
-	}
+	
+	
 
 	/**
 	 * Not inside constructor to enable dynamically changing the text through event handlers
@@ -69,8 +64,8 @@ class Launcher extends JFrame {
 	/**
 	 * Class constructor, creates a launcher frame
 	 */
-	Launcher(){
-
+	public Launcher(){
+		
 		/*
 		 * Launcher Frame setup
 		 */
