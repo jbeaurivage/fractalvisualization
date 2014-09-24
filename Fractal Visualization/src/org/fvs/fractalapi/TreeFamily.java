@@ -1,5 +1,3 @@
-package org.fvs.fractalapi;
-
 /*
  * FRACTAL VISUALIZATION SOFTWARE
  * Copyright (C) 2014 Justin Beaurivage
@@ -18,6 +16,8 @@ package org.fvs.fractalapi;
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+package org.fvs.fractalapi;
 
 /**
  * This class provides an API for fractals of the Fractal Tree Family, which have common specific

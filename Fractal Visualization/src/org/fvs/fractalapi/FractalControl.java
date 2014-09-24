@@ -1,4 +1,3 @@
-package org.fvs.fractalapi;
 /*
  * FRACTAL VISUALIZATION SOFTWARE
  * Copyright (C) 2014 Justin Beaurivage
@@ -18,6 +17,7 @@ package org.fvs.fractalapi;
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package org.fvs.fractalapi;
 import processing.core.PApplet;
 
 /**

@@ -1,4 +1,3 @@
-package org.fvs.fractalgraphical;
 /*
  * FRACTAL VISUALIZATION SOFTWARE
  * Copyright (C) 2014 Justin Beaurivage
@@ -17,6 +16,8 @@ package org.fvs.fractalgraphical;
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+package org.fvs.fractalgraphical;
 
 import org.fvs.fractalapi.TreeFamily;
 

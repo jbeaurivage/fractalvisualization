@@ -1,6 +1,3 @@
-package org.fvs.fractalgraphical;
-import org.fvs.fractalapi.FractalControl;
-
 /*
  * FRACTAL VISUALIZATION SOFTWARE
  * Copyright (C) 2014 Justin Beaurivage
@@ -19,6 +16,10 @@ import org.fvs.fractalapi.FractalControl;
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+package org.fvs.fractalgraphical;
+
+import org.fvs.fractalapi.FractalControl;
 
 /**
  * This class renders an interactive JML fractal with the use of the Processing library.

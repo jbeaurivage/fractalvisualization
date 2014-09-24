@@ -1,4 +1,3 @@
-package org.fvs.fractalgraphical;
 /*
  * FRACTAL VISUALIZATION SOFTWARE
  * Copyright (C) 2014 Justin Beaurivage
@@ -18,15 +17,16 @@ package org.fvs.fractalgraphical;
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.fvs.fractalapi.FractalControl;
+package org.fvs.fractalgraphical;
 
+import org.fvs.fractalapi.FractalControl;
 import processing.core.PGraphics;
 
 /**
  * This class renders an interactive Mandelbrot fractal with the use of the Processing library.
  * @author Justin Beaurivage
  */
-class Mandelbrot extends FractalControl {
+public class Mandelbrot extends FractalControl {
 
 	/**
 	 * ID for possible class serialization
