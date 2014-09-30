@@ -25,9 +25,8 @@ package fvs.fractalapi;
  * @author Justin Beaurivage
  *
  */
+@SuppressWarnings("serial")
 public abstract class TreeFamily extends FractalControl {
-	
-	private static final long serialVersionUID = -136249419890574721L;
 	
 	/*
 	 * Tree family specific variables

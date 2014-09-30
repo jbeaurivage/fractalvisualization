@@ -25,7 +25,6 @@ package fvs.fractalapi;
  * @author Justin Beaurivage
  *
  */
-
 public final class Instructions {
 	public static final String JML = "<html><h3>JML Fractal</h3>" +
 			"This fractal is the the result of the collaborative <br>" +
@@ -39,7 +38,7 @@ public final class Instructions {
 
 
 	public static final String KOCHTREE = "<html><h3>Koch Tree</h3>" +
-			"This fractal displays an interesting Koch Snowflake-like structure " +
+			"This fractal displays an interesting Koch curve-like structure " +
 			"<br>through a specific set of parameters inside a fractal tree. However, it has <br>" +
 			"a high processor cost and will slow down after zooming in <br>" +
 			"a few times." +

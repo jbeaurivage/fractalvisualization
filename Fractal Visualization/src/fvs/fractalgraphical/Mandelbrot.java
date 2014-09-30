@@ -26,12 +26,8 @@ import processing.core.PGraphics;
  * This class renders an interactive Mandelbrot fractal with the use of the Processing library.
  * @author Justin Beaurivage
  */
+@SuppressWarnings("serial")
 public class Mandelbrot extends FractalControl {
-
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = 7643443631396933764L;
 
 	/**
 	 * Called by the default Processing setup method at applet
@@ -135,7 +131,7 @@ public class Mandelbrot extends FractalControl {
 		int rectW = rect_x2-rect_x1;
 		int rectH = rect_y2-rect_y1;
 
-		stroke(255);
+		stroke(255,0,0);
 		noFill();
 		if (mousePressed && mouseButton == LEFT && rectW > 0) {
 			rect(rect_x1, rect_y1, rectW,rectH);
@@ -272,7 +268,7 @@ public class Mandelbrot extends FractalControl {
 	/*
 	 * Fractal image frame
 	 */
-	PGraphics pg;
+	private PGraphics pg;
 
 
 }

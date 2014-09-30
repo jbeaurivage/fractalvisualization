@@ -41,12 +41,8 @@ import fvs.fractalapi.Instructions;
  * @author Justin Beaurivage
  *
  */
+@SuppressWarnings("serial")
 public class Launcher extends JFrame {
-
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = -1041075445508032506L;
 
 	/**
 	 * Records user fractal selection (has a default value)

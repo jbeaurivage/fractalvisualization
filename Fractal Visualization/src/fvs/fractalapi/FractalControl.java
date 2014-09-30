@@ -25,12 +25,8 @@ import processing.core.PApplet;
  * methods. It extends PApplet to provide a Processing environment to draw the graphics.
  * @author Justin Beaurivage 
  */
+@SuppressWarnings("serial")
 public abstract class FractalControl extends PApplet {
-
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = -2472489619697747836L;
 
 	/*
 	 * General fractal variables

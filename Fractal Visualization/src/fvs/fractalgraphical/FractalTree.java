@@ -28,12 +28,8 @@ import processing.core.PVector;
  * @author Justin Beaurivage
  *
  */
+@SuppressWarnings("serial")
 public class FractalTree extends TreeFamily {
-	
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = -2066115186967464010L;
 
 	/*
 	 * Tree variables initialization

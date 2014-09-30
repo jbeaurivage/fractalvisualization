@@ -28,13 +28,8 @@ import processing.core.PVector;
  * @author Justin Beaurivage
  *
  */
+@SuppressWarnings("serial")
 public class KochTree extends TreeFamily {
-
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = -95325482120226376L;
-
 
 	protected void fractalSetup(){
 		

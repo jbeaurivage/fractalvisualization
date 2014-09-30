@@ -26,12 +26,8 @@ import fvs.fractalapi.FractalControl;
  * @author Justin Beaurivage
  *
  */
+@SuppressWarnings("serial")
 public class JML extends FractalControl {
-
-	/**
-	 * ID for possible class serialization
-	 */
-	private static final long serialVersionUID = -2753097136561885832L;
 
 	protected void fractalSetup(){
 		iterations = 8;
