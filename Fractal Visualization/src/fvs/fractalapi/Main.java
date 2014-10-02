@@ -22,7 +22,6 @@ package fvs.fractalapi;
 import javax.swing.UIManager;
 
 import fvs.fractalgraphical.Launcher;
-
 /**
  * This class provides the entry point for the software, with {@link void main(String[])}
  * @author justinbeaurivage

@@ -86,7 +86,7 @@ public class Launcher extends JFrame {
 		JPanel introPanel = new JPanel();
 		introPanel.setBackground(Color.WHITE);
 		JLabel intro = new JLabel("<html>Interactive Fractal Visualization Software" +
-				"<br>v1.1<html>");
+				"<br>v1.2<html>");
 		intro.setFont(new Font("Default",Font.PLAIN,24));
 		introPanel.add(intro);
 
@@ -101,7 +101,14 @@ public class Launcher extends JFrame {
 		/*
 		 *  Fractal Selection box
 		 */
-		String[] selection = {"Fractal Tree","Koch Tree","JML", "Mandelbrot"};
+		String[] selection = {
+				"Fractal Tree",
+				"Koch Tree",
+				"JML",
+				"Mandelbrot",
+				"Koch Snowflake",
+				"TempCurve"
+				};
 		JComboBox selector = new JComboBox(selection);
 
 		/*
@@ -134,6 +141,14 @@ public class Launcher extends JFrame {
 
 				else if(fractalSelection == "Mandelbrot"){
 					textArea.setText(Instructions.MANDELBROT);
+				}
+				
+				else if(fractalSelection == "Koch Snowflake"){
+					textArea.setText(Instructions.KOCHSNOWFLAKE);
+				}
+				
+				else if(fractalSelection == "TempCurve"){
+					textArea.setText(Instructions.TEMPCURVE);
 				}
 
 			}
@@ -199,6 +214,26 @@ public class Launcher extends JFrame {
 					fractal.init();
 					engine.setVisible(true);
 				}
+				
+				else if(fractalSelection == "Koch Snowflake"){
+					fractal = new KochSnowflake();
+					engine.add(fractal);
+					engine.setSize(800,800);
+					engine.setTitle(fractalSelection);
+					fractal.init();
+					engine.setVisible(true);
+				}
+				
+				else if(fractalSelection == "TempCurve"){
+					fractal = new TempCurve();
+					engine.add(fractal);
+					engine.setSize(800,800);
+					engine.setTitle(fractalSelection);
+					fractal.init();
+					engine.setVisible(true);
+				}
+				
+				
 			}
 		});
 

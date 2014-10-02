@@ -80,57 +80,52 @@ public class JML extends FractalControl {
 	{
 		smooth();
 		noStroke();
-		
+
 		//color generation
 		fill((float)(0.7*c),100,(float)(1.5*(255-c)));
-		
+
 		//draw circles
 		ellipse(x, y, radius, radius);
-		
+
 		//radius limit
 		float rad = 350*pow((float) 0.5,iterations-1);
-		
+
 		/*
 		 * Call method recursion with radius limiter to avoid infinite loops
 		 */
 		if(radius >= rad) { 
-			
+
 			/*
 			 * position limits
 			 */
-			if(
-					x < -((translateX)-(width/2)) &&
-					x > -((translateX)+(width/2)) &&
-					y < -((translateY)-(height/2)) &&
-					y > -((translateY)+(height/2)))
-			{
-				
-				if(pos == "center"){
-					drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
-					drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
-					drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
-					drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
-				}
-				if(pos == "left"){
-					drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
-					drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
-					drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
-				}
-				if(pos == "right"){
-					drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
-					drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
-					drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
-				}
-				if(pos == "up"){
-					drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
-					drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
-					drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
-				}
-				if(pos == "down"){
-					drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
-					drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left 
-					drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
-				}
+
+
+			if(pos == "center"){
+				drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
+				drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
+				drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
+				drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
+			}
+			if(pos == "left"){
+				drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
+				drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
+				drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
+			}
+			if(pos == "right"){
+				drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
+				drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
+				drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
+			}
+			if(pos == "up"){
+				drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
+				drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left
+				drawCircle(x, y - radius/2-radius/4, radius/2,"up",c+50); //up
+			}
+			if(pos == "down"){
+				drawCircle(x + radius/2+radius/4, y, radius/2,"right",c+50); //right
+				drawCircle(x - radius/2-radius/4, y, radius/2,"left",c+50); //left 
+				drawCircle(x, y+ radius/2+radius/4, radius/2,"down",c+50); //down
+
 			}
 		}
 	}
@@ -155,7 +150,7 @@ public class JML extends FractalControl {
 		text(scaleFactor+"x zoom",650,750);
 		text("("+translateX+", "+translateY+")",10,20);
 	}
-	
+
 	/**
 	 * keyboard controls
 	 */
@@ -178,14 +173,22 @@ public class JML extends FractalControl {
 			//zoom in
 		case 'a':
 			scaleFactor *= 2;
-			iterations += 1;
+
+			if(iterations < 13){
+				iterations ++;
+			}
+
 			println(scaleFactor+"x zoom");
 			break;
 
 			//zoom out
 		case 'z':
 			scaleFactor /= 2;
-			iterations -= 1;
+
+			if(iterations < 13){
+				iterations --;
+			}
+
 			println(scaleFactor+"x zoom");
 			break;
 

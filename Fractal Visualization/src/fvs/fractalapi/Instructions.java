@@ -50,7 +50,7 @@ public final class Instructions {
 
 
 	public static final String FRACTALTREE = "<html><h3>Fractal Tree</h3>" +
-			"Simple rendering of the classic Fractal Tree. However, it has <br>" +
+			"Simple rendering of the classic Fractal Tree. It has <br>" +
 			"a high processor cost and will slow down after zooming in <br>" +
 			"a few times." +
 			"<h4>Instructions:</h4>" +
@@ -66,4 +66,16 @@ public final class Instructions {
 			"<h4>Instructions:</h4>" +
 			"Hold down the mouse and drag a rectangle over the desired zooming area. <br>" +
 			"Drag the rectangle from upper left corner to lower right corner. R to reset.</html>";
+	
+	public static final String KOCHSNOWFLAKE = "<html><h3>Koch Snowflake</h3>" +
+			"Rendering of the well-known Koch Snowflake. It has <br>" +
+			"a high processor cost and will slow down after zooming in <br>" +
+			"a few times." +
+			"<h4>Instructions:</h4>" +
+			"<ol><li>Hold down space and move the image <br> around with the mouse to " +
+			"center before zooming</li>" +
+			"<li>A to zoom in, Z to zoom out</li><li>Arrow keys to navigate " +
+			"around the fractal </li><li>R to reset. </li></ol></html>";
+	
+	public static final String TEMPCURVE = "";
 }

@@ -1,15 +1,47 @@
+/*
+ * FRACTAL VISUALIZATION SOFTWARE
+ * Copyright (C) 2014 Justin Beaurivage
+ * justbeaurivage@gmail.com
+ * 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package fvs.fractalgraphical;
+
 import java.util.ArrayList;
-
 import processing.core.PVector;
-
 import fvs.fractalapi.*;
 
+/**
+ * This class displays the classic Koch Snowflake fractal, with the use of a turtle API, which source
+ * code was taken from Jamie Matthews (j4mie.org) under the Creative Commons license. 
+ * It uses the same zooming algorithm as the JML fractal, and the fractal drawing engine
+ * uses a recursive method to generate the fractal.
+ * @author Justin Beaurivage
+ *
+ */
 @SuppressWarnings("serial")
 public class KochSnowflake extends FractalControl {
 
+	/**
+	 * Stroke weight (reduces with zooming)
+	 */
 	private float stroke;
 	
+	/**
+	 * initialize superclass variables and first fractal generation
+	 */
 	@Override
 	protected void fractalSetup() {
 		translateX = -300; 
@@ -17,9 +49,28 @@ public class KochSnowflake extends FractalControl {
 		scaleFactor = 1;
 		iterations = 10;
 		stroke = 1;
+		
+		background(0);
+
+		/*
+		 * translate, zoom and draw
+		 */
+		pushMatrix();
+			translate(width/2+translateX*scaleFactor,
+					height/2+translateY*scaleFactor);
+			scale(scaleFactor);
+		
+			renderFractal(new Turtle(0, 0, -60), 200);
+		popMatrix();
+
 
 	}
 
+	/**
+	 * Render a single Koch curve
+	 * @param t The drawing turtle
+	 * @param length The length of the curve
+	 */
 	private void renderCurve(Turtle t, float length){
 
 		t.points.add(new PVector(t.x,t.y));
@@ -43,15 +94,23 @@ public class KochSnowflake extends FractalControl {
 			t.forward(length);
 		}
 
-		fill(255,0,0);
+		/*
+		 * Filling algorithm (not yet implemented)
+		 */
+		/*fill(255,0,0);
 		beginShape(CLOSE);
 		for(PVector p : t.points){
 			vertex(p.x,p.y);
 		}
-		endShape();
+		endShape();*/
 
 	}
 
+	/**
+	 * Dispose three Koch curves in a triangle to create the Koch Snowflake
+	 * @param t The drawing turtle
+	 * @param length Length of one Koch curve
+	 */
 	private void renderFractal(Turtle t, float length){
 
 		renderCurve(t, length);
@@ -62,6 +121,9 @@ public class KochSnowflake extends FractalControl {
 
 	}
 
+	/**
+	 * Reset initial parameters
+	 */
 	@Override
 	protected void reset() {
 		
@@ -74,17 +136,88 @@ public class KochSnowflake extends FractalControl {
 	}
 
 
-	public void draw(){
+	/**
+	 * Call loop (keyPress listener) and draw zooming cross
+	 */
+	public void draw(){		
+		visor();
+	}
+	
+	/**
+	 * Action listener, keyboard controls
+	 */
+	@Override
+	public void keyPressed(){
+		switch(key){
+		//mouse move holding down spacebar
+		case ' ':
+				translateX = (mouseX-width/2 - 300)/scaleFactor;
+				translateY = (mouseY-width/2 + 175)/scaleFactor;
+			break;
+
+			//reset
+		case 'r':
+			reset();
+			break;
+
+			//zoom in
+		case 'a':
+			scaleFactor *= 2;
+			iterations /= log(iterations);
+			println(scaleFactor+"x zoom");
+			stroke /= 2;
+			break;
+
+			//zoom out
+		case 'z':
+			scaleFactor /= 2;
+			iterations *= log(iterations);
+			println(scaleFactor+"x zoom");
+			stroke*= 2;
+			break;
+
+		}
+		switch(keyCode){
+
+		case UP:
+			translateY += (speed/scaleFactor);
+			break;
+
+		case DOWN:
+			translateY -= (speed/scaleFactor);
+			break;
+
+		case LEFT:
+			translateX += (speed/scaleFactor);
+			break;
+
+		case RIGHT:
+			translateX -= (speed/scaleFactor);
+			break;
+
+		case ENTER:
+			break;
+		}
+		
 		background(0);
 
+		/*
+		 * redraw the fractal
+		 */
 		pushMatrix();
 		translate(width/2+translateX*scaleFactor,
 				height/2+translateY*scaleFactor);
 		scale(scaleFactor);
 		renderFractal(new Turtle(0, 0, -60), 200);
 		popMatrix();
+
 	}
 
+	/**
+	 * Provides the drawing turtle API
+	 * @author Jamie Matthews
+	 *
+	 */
 	class Turtle {
 
 		float x, y, angle; // Current position of the turtle
@@ -159,60 +292,6 @@ public class KochSnowflake extends FractalControl {
 			penDown = true;
 		}
 
-	}
-
-	@Override
-	public void keyPressed(){
-		switch(key){
-		//mouse move holding down spacebar
-		case ' ':
-				translateX = (mouseX-width/2 - 300)/scaleFactor;
-				translateY = (mouseY-width/2 + 175)/scaleFactor;
-			break;
-
-			//reset
-		case 'r':
-			reset();
-			break;
-
-			//zoom in
-		case 'a':
-			scaleFactor *= 2;
-			iterations /= log(iterations);
-			println(scaleFactor+"x zoom");
-			stroke /= 2;
-			break;
-
-			//zoom out
-		case 'z':
-			scaleFactor /= 2;
-			iterations *= log(iterations);
-			println(scaleFactor+"x zoom");
-			stroke*= 2;
-			break;
-
-		}
-		switch(keyCode){
-
-		case UP:
-			translateY += (speed/scaleFactor);
-			break;
-
-		case DOWN:
-			translateY -= (speed/scaleFactor);
-			break;
-
-		case LEFT:
-			translateX += (speed/scaleFactor);
-			break;
-
-		case RIGHT:
-			translateX -= (speed/scaleFactor);
-			break;
-
-		case ENTER:
-			break;
-		}
 	}
 
 }
