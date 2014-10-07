@@ -76,6 +76,4 @@ public final class Instructions {
 			"center before zooming</li>" +
 			"<li>A to zoom in, Z to zoom out</li><li>Arrow keys to navigate " +
 			"around the fractal </li><li>R to reset. </li></ol></html>";
-	
-	public static final String TEMPCURVE = "";
 }

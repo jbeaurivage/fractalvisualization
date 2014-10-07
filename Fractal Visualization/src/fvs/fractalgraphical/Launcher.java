@@ -103,11 +103,10 @@ public class Launcher extends JFrame {
 		 */
 		String[] selection = {
 				"Fractal Tree",
-				"Koch Tree",
 				"JML",
-				"Mandelbrot",
+				"Koch Tree",
 				"Koch Snowflake",
-				"TempCurve"
+				"Mandelbrot",
 				};
 		JComboBox selector = new JComboBox(selection);
 
@@ -145,10 +144,6 @@ public class Launcher extends JFrame {
 				
 				else if(fractalSelection == "Koch Snowflake"){
 					textArea.setText(Instructions.KOCHSNOWFLAKE);
-				}
-				
-				else if(fractalSelection == "TempCurve"){
-					textArea.setText(Instructions.TEMPCURVE);
 				}
 
 			}
@@ -223,16 +218,6 @@ public class Launcher extends JFrame {
 					fractal.init();
 					engine.setVisible(true);
 				}
-				
-				else if(fractalSelection == "TempCurve"){
-					fractal = new TempCurve();
-					engine.add(fractal);
-					engine.setSize(800,800);
-					engine.setTitle(fractalSelection);
-					fractal.init();
-					engine.setVisible(true);
-				}
-				
 				
 			}
 		});
