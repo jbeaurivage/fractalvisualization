@@ -1,5 +1,5 @@
 ################################################          
-#    Fractal Visualization Software v1.1 Beta  #	  
+#    Fractal Visualization Software v1.2       #	  
 #     Copyright (C) 2014 Justin Beaurivage     #	 
 ################################################	  
 
